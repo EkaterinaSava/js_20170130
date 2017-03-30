@@ -1,5 +1,5 @@
 
-const template = window.fest[src/blocks/signup/signup];
+const template = window.fest['src/blocks/signup/signup'];
 
 export default class Signup {
   constructor(node) {
@@ -10,10 +10,9 @@ export default class Signup {
     this.node.innerHTML = template ({
       texts: (
         login: 'Login',
-        password: 'Password'
+        password: 'Password',
+        email: 'Email'
       )
     });
   }
 }
-
-window.Signup = Signup;

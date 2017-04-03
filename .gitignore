@@ -1,5 +1,6 @@
 node_modules
 .idea
 **/*.fest.js
+**/*.xml.js
 public
 .DS_Store

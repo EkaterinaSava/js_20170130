@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
   <title>learn.javascript.ru project</title>
 
@@ -12,17 +13,33 @@
 
 <body>
 
-  <h2>Login</h2>
-  <div class="view js__login-view"></div>
+  <header id="header" class="header">
+    <div class="container header__i">
+        <span class="header-logo"> Learn JS</span>
+        <div class="container header-links js-logout-view"></div>
+    </div>
+  </header>
 
-  <h2>Signup</h2>
-  <div class="view js__signup-view"></div>
+  <div class="container">
 
-  <h2>Notes List</h2>
-  <div class="view js-notes-list"></div>
+    <div class="pure-g js-forms">
+      <div class="pure-u-1-2">
+        <div class="l-box">
+          <div class="view js-login-view"></div>
+        </div>
+      </div>
+      <div class="pure-u-1-2 sign-up-block">
+        <div class="l-box">
+          <div class="view js-signup-view"></div>
+        </div>
+      </div>
+    </div>
 
-  <h2>Notes</h2>
-  <div class="view js-note-view"></div>
+    <div class="view js-notes-list"></div>
+
+    <div class="view js-note-view"></div>
+
+  </div>
 
 </body>
 </html>

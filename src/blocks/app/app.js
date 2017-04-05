@@ -4,6 +4,7 @@ import Signup from '../signup/signup';
 import Note from '../note/note';
 import NotesList from '../notesList/notesList';
 import Cookies from 'js-cookie';
+import Router from '../../modules/router';
 
 const data = [
   {

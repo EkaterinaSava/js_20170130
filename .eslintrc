@@ -3,7 +3,10 @@
   "rules": {
     "comma-dangle": ["error", "never"],
     "no-trailing-spaces": [2, { "skipBlankLines": true }],
-    "no-console": 0
+    "no-console": 0,
+    "indent": ["error", 4],
+    "quotes": ["error", "single"],
+    "linebreak-style": ["error", "windows"]
   },
   "env": {
     "browser": true,

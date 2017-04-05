@@ -1,4 +1,5 @@
 import template from './login.xml.js';
+import User from '../../models/user';
 
 export default class Login {
   constructor(node) {
@@ -6,6 +7,9 @@ export default class Login {
     this.render();
     this.cache();
     this.events();
+    this.node.hidden = true;
+
+    this.model = new User('//test.com');
   }
 
   render() {
@@ -16,6 +20,15 @@ export default class Login {
       }
     });
   }
+
+  show() {
+    this.node.hidden = false;
+  }
+
+  hide() {
+    this.node.hidden = true;
+  }
+
 
   cache() {
     this.formName = 'formLogin';
@@ -35,33 +48,11 @@ export default class Login {
 
     ev.preventDefault();
 
-    const xhr = new XMLHttpRequest();
-    const data = JSON.stringify({
+    this.model.login({
       login: form.login.value,
       password: form.password.value
+    }).then(function() {
+      console.log('ok');
     });
-
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-
-    xhr.addEventListener('readystatechange', () => {
-      if (xhr.readyState !== 4) {
-        return;
-      }
-
-      if (xhr.status !== 200) {
-        alert(xhr.status + ': ' + xhr.statusText);
-      } else {
-        const response = JSON.parse(xhr.responseText);
-        alert(response.message);
-
-        if (response.status === 'success') {
-          const event = new CustomEvent('user.login');
-          document.body.dispatchEvent(event);
-        }
-      }
-    });
-
-    xhr.send(data);
   }
 }
